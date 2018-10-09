@@ -42,6 +42,10 @@ h1 {
 
 /* grid fyrir efni, setja þarf upp í html */
 
+.grid{
+  max-width: 1450px;
+}
+
 .grid__row {
   display: flex;
   flex-direction: column;
@@ -53,6 +57,7 @@ h1 {
   width: 100%;
   padding-right: 10px;
   padding-left: 10px;
+
 }
 
 /* TODO setja upp grid fyrir >= 1000px */
@@ -61,17 +66,152 @@ h1 {
 
 /* grid fyrir cards */
 
-.cards {
-}
+/*.cards {
+}*/
 
 /* TODO útfæra grid fyrir cards */
 
-/*
-  .card kemur óbreytt úr sýnilausn á verkefni 5 fyrir utan responsive stíla og
-  að það fær `height: 100%;`
-  Sýnilausn verður gefin út við lok dags miðvikudaginn 3. okt
-*/
 
-/* TODO .card stílar úr v5 (eða sýnilausn...) */
+.card {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 100%;
+  overflow: hidden;
+
+  background-color: #fff;
+  border-bottom: 2px solid #aaa;
+  height: 100%;
+}
+
+.card__title {
+  margin-bottom: 20px;
+
+  font-size: 22px;
+  line-height: 1;
+  word-break: break-word;
+}
+
+.card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.card__text {
+  font-size: 16px;
+  line-height: 1.375;
+  overflow: auto;
+  word-break: break-word;
+  margin-bottom: 20px;
+
+}
+
+.card__image {
+  flex: 0 0 150px;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__tags {
+  margin-top: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  list-style: none;
+}
+
+.card__tag {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
 
 /* TODO responsive stílar fyrir .card */
+@media (min-width: 700px){
+
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 40px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+  
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 50%;
+    height: 300px;
+    overflow: hidden;
+  
+    background-color: #fff;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+  }
+  
+  .card__title {
+    margin-bottom: 20px;
+  
+    font-size: 1.375em;
+    line-height: 1;
+    word-break: break-word;
+  }
+  
+  .card__content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .card__text {
+    font-size: 1em;
+    line-height: 1.375;
+    overflow: auto;
+    word-break: break-word;
+  }
+  
+  .card__image {
+    padding-left: 20px;
+    flex: 0 0 150px;
+  }
+  
+  .card__img {
+    max-width: 100%;
+  }
+
+}
+
+@media (min-width: 1000px){
+
+  .grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .grid__col{
+    width: 50%;
+    margin-bottom: 40px;
+  }
+  .card{
+    width: 33.333%
+  }
+}
+
+@media (min-width: 1490px) {
+  main{
+    padding: 0;
+  }
+}
+
+@media (max-width: 999px) {
+  .grid__row:nth-child(2n) .grid__col:first-child{
+    order: 4;
+  }
+}
